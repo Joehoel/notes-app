@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
+
+body {
+  font-family: "Roboto Mono";
+  -webkit-font-smoothing: antialiased;
+}
+
+#noteTitle,
+#noteText {
+  width: 370px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+#addNoteButton {
+  padding: 0.5rem;
+  border: rgb(202, 202, 202) 2px solid;
+}
+
+.note {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  border: rgb(202, 202, 202) 2px solid;
+  display: inline-block;
+  word-wrap: break-word;
+  max-width: 80vw;
+}
+
+.note h2 {
+  margin: 0.5rem 0;
+}
+.note p {
+  margin-bottom: 0.2rem;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+  overflow: all;
+  margin-top: 1rem;
+}
