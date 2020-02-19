@@ -2,6 +2,9 @@ const noteTitleElement = document.getElementById('noteTitle');
 const noteTextElement = document.getElementById('noteText');
 const noteForm = document.getElementById('noteForm');
 
+/**
+ * @class Note
+ */
 class Note {
   constructor(title, text) {
     this.title = title;
@@ -12,6 +15,11 @@ class Note {
 }
 
 class Store {
+  /**
+   * @static
+   * @returns
+   * @memberof Store
+   */
   static getNotes() {
     let notes;
     if (localStorage.getItem('notes') === null) {
@@ -22,6 +30,11 @@ class Store {
     return notes;
   }
 
+  /**
+   * @static
+   * @param {*} note
+   * @memberof Store
+   */
   static addNotes(note) {
     const notes = Store.getNotes();
 
@@ -29,6 +42,11 @@ class Store {
     localStorage.setItem('notes', JSON.stringify(notes));
   }
 
+  /**
+   * @static
+   * @param {*} date
+   * @memberof Store
+   */
   static removeNote(date) {
     const notes = Store.getNotes();
     notes.forEach((note, index) => {
@@ -40,13 +58,25 @@ class Store {
   }
 }
 
+/**
+ * @class Interface
+ */
 class Interface {
+  /**
+   * @static
+   * @memberof Interface
+   */
   static displayNotes() {
     const notes = Store.getNotes();
 
     notes.forEach(note => Interface.addNoteToList(note));
   }
 
+  /**
+   * @static
+   * @param {*} note
+   * @memberof Interface
+   */
   static addNoteToList(note) {
     const list = document.querySelector('.notes');
 
@@ -61,6 +91,10 @@ class Interface {
     list.appendChild(div);
   }
 
+  /**
+   * @static
+   * @memberof Interface
+   */
   static clearFields() {
     noteTitleElement.value = '';
     noteTextElement.value = '';
